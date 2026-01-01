@@ -98,7 +98,7 @@ async def handle_credentials(update: Update, context: ContextTypes.DEFAULT_TYPE)
         context.user_data['users'][username] = password
         
         # Create refresh button with username in callback data
-        keyboard = [[InlineKeyboardButton("🔄 Refresh", callback_data=f"refresh_{username}")]]
+        keyboard = [[InlineKeyboardButton("🆕 Renew", callback_data=f"refresh_{username}")]]
         reply_markup = InlineKeyboardMarkup(keyboard)
         
         await status_message.edit_text(message, reply_markup=reply_markup)
@@ -130,7 +130,7 @@ async def refresh_button_handler(update: Update, context: ContextTypes.DEFAULT_T
     password = context.user_data['users'][username]
     
     # Update status
-    await query.edit_message_text(f"🔄 Refreshing data for {username}...")
+    await query.edit_message_text(f" 🆕Renewing data for {username}...")
     
     try:
         scraper = ECAPScraper()
@@ -163,7 +163,7 @@ async def refresh_button_handler(update: Update, context: ContextTypes.DEFAULT_T
         message = format_message(data, username, todays_attendance)
         
         # Create refresh button
-        keyboard = [[InlineKeyboardButton("🔄 Refresh", callback_data=f"refresh_{username}")]]
+        keyboard = [[InlineKeyboardButton("🆕 Renew", callback_data=f"refresh_{username}")]]
         reply_markup = InlineKeyboardMarkup(keyboard)
         
         await query.edit_message_text(message, reply_markup=reply_markup)
