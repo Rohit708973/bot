@@ -11,4 +11,4 @@ ATTENDANCE_URL = BASE_URL + "Academics/StudentAttendanceByDay.aspx"
 
 # Bot Token - Load from environment variable (secure for deployment)
 # Falls back to hardcoded value for local testing
-BOT_TOKEN = os.getenv("BOT_TOKEN", "8035625648:AAGmrNXuYN9w121k9IiloB6ahx0YoherFkU")
+BOT_TOKEN = os.getenv("BOT_TOKEN", "8433079858:AAEbUIF3vGEB6MKxMItnYaC6saHmtdTIQhE")
